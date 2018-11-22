@@ -13,13 +13,11 @@ var validater = $('#login-form').validate({
             success: function (data, textStatus, jqXHR) {
                 console.log('success');
                 localStorage.setItem('token', data.token);
+                window.location.href = "listsong.html";
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log('error');
-                // if (Object.keys(jqXHR.responseJSON.error).length > 0) {
-                //     $('#summary').text(please fix ${Object.keys(jqXHR.responseJSON.error).length} below!);
-                //     validater.showErrors(jqXHR.responseJSON.error);
-                // }
+                alert('Đăng nhập không thành công');
             }
         });
         return false;

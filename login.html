@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Login Account</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-reboot.min.css">
 </head>
 <body>
 <h1>Login form</h1>
@@ -13,24 +16,26 @@
     <li><a href="listsong.html" title="Latest Song">Latest Song</a></li>
     <li><a href="mysong.html" title="My Song">My Song</a></li>
 </ul>
-<div>
+<div class="container-fluid">
+    <div id="sumary" class="error"></div>
     <form action="" name="login-form" id="login-form">
-        <div>
-            <label>Password</label>
-            <input type="password" name="password">
+        <div class="form-group row">
+            <label class="col-form-label col-1">Email</label>
+            <input class="form-control col-2" type="email" name="email" placeholder="Email">
         </div>
-        <div>
-            <label>Email</label>
-            <input type="email" name="email">
+        <div class="form-group row">
+            <label class="col-form-label col-1">Password</label>
+            <input class="form-control col-2" type="password" name="password" placeholder="Password">
         </div>
-        <div>
+        <div class="form-group">
             <label> </label>
-            <input type="submit" name="btn-submit" value="Submit">
-            <input type="reset" name="btn-reset" value="Reset">
+            <input class="btn btn-primary" type="submit" name="btn-submit" value="Submit">
+            <input class="btn btn-primary" type="reset" name="btn-reset" value="Reset">
         </div>
     </form>
 </div>
 <script src="js/library/jquery-3.3.1.min.js"></script>
+<script src="js/library/bootstrap.min.js"></script>
 <script src="js/library/jquery.validate.min.js"></script>
 <script src="js/library/additional-methods.min.js"></script>
 <script src="js/config.js"></script>

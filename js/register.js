@@ -65,20 +65,15 @@ var validater = $('#register-form').validate({
             url: REGISTER_API,
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(senderObject),
-            success: function (data, textStatus, jqXHR) {
+            success: function () {
                 console.log('success');
-                console.log(data);
-                console.log('-----');
-                console.log(data.responseText);
-                console.log('-----');
-                console.log(textStatus);
-                console.log('-----');
-                console.log(jqXHR);
+                alert('Đăng kí thành công');
             },
-            error: function (jqXHR, textStatus, errorThrown) {
+            error: function (jqXHR, textStatus, error) {
                 console.log('error');
+                console.log(Object.keys(jqXHR.responseJSON.error));
                 // if (Object.keys(jqXHR.responseJSON.error).length > 0) {
-                //     $('#summary').text(please fix ${Object.keys(jqXHR.responseJSON.error).length} below!);
+                //     //$('#summary').text(please fix ${Object.keys(jqXHR.responseJSON.error).length} below!);
                 //     validater.showErrors(jqXHR.responseJSON.error);
                 // }
             }
