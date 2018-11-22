@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Account || Song I Like</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<h1>Register form</h1>
+<ul>
+    <li><a href="register.html" title="Register member">Register</a></li>
+    <li><a href="login.html" title="Member login">Login</a></li>
+    <li><a href="creatsong.html" title="Create Song">Create Song</a></li>
+    <li><a href="listsong.html" title="Latest Song">Latest Song</a></li>
+    <li><a href="mysong.html" title="My Song">My Song</a></li>
+</ul>
+<div class="container-fluid">
+    <div id="sumary" class="error"></div>
+    <form action="" name="register-form" id="register-form">
+        <div class="form-group">
+            <label>First Name</label>
+            <input class="form-control" type="text" name="firstName">
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input class="form-control" type="text" name="lastName">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input class="form-control" type="password" name="password">
+        </div>
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input class="form-control" type="password" name="confirm-password">
+        </div>
+        <div class="form-group">
+            <label>Address</label>
+            <input class="form-control" name="address">
+        </div>
+        <div class="form-group">
+            <label>Phone</label>
+            <input class="form-control" type="text" name="phone">
+        </div>
+        <div class="form-group">
+            <label>Avatar</label>
+            <input class="form-control" type="text" name="avatar">
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <select name="gender">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+                <option value="2">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input class="form-control" type="email" name="email">
+        </div>
+        <div class="form-group">
+            <label>Birthday</label>
+            <input class="form-control" type="date" name="birthday">
+        </div>
+        <div class="form-group">
+            <label>&nbsp;</label>
+            <input class="form-control" type="submit" name="btn-submit" value="Submit">
+            <input class="form-control" type="reset" name="btn-reset" value="Reset">
+        </div>
+    </form>
+</div>
+<script src="js/library/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="js/library/jquery.validate.min.js"></script>
+<script src="js/library/additional-methods.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>
