@@ -19,6 +19,9 @@ $.ajax({
             content += '<div class="song-control" onclick="playSong(\'' + listSong[i].link + '\', \'' + listSong[i].name + '\', \'' + listSong[i].singer + '\')">Play</div>';
             content += '<div class="song-control"><a href="song-detail.html?id=' + listSong[i].id + '">Detail</a></div>';
             content += '</div>';
+            // $('.btn-play').click(function () {
+            //     playSong(\'' + listSong[i].link + '\', \'' + listSong[i].name + '\', \'' + listSong[i].singer + '\');
+            // });
         }
         document.getElementById('list-song').innerHTML = content;
     },
@@ -28,3 +31,7 @@ $.ajax({
         window.location.href = "login.html";
     }
 });
+function playSong(link, name, singer) {
+    $('#my-mp3').attr('src', link);
+    $('#current-play-title').text('Current playing: ' + name + " - " + singer);
+}
