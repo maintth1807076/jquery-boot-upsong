@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <title>My Song</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand pl-5" href="#">
+        <i class="fa fa-camera-retro fa-2x pl-5"></i>
+    </a>
+    <span class="navbar-text pr-5">MP3 Song</span>
+    <form class="form-inline pl-5">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse pl-5" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto pl-5">
+            <li class="nav-item active pl-5">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item pl-3">
+                <a class="nav-link" href="listsong.html">List Song</a>
+            </li>
+            <li class="nav-item pl-3">
+                <a class="nav-link" href="mysong.html">My Song</a>
+            </li>
+            <li class="nav-item pl-3">
+                <a class="nav-link" href="creatsong.html">Creat Song</a>
+            </li>
+            <li class="nav-item pl-3">
+                <a class="nav-link disabled" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown pl-3">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a id="btn-register" class="dropdown-item" href="#">Register</a>
+                    <div class="dropdown-divider"></div>
+                    <a id="btn-login" class="dropdown-item" href="#">Login</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="song-player">
+    <div class="song-detail">
+        <marquee behavior="scroll" direction="left">
+            <div class="current-song-title">
+                <span id="current-play-title"></span>
+            </div>
+        </marquee>
+    </div>
+    <div class="player">
+        <audio controls id="my-mp3" autoplay>
+            <source src="" type="audio/mpeg">
+        </audio>
+    </div>
+</div>
+<div class="list-song" id="list-song">
+</div>
+<script src="js/library/jquery-3.3.1.min.js"></script>
+<script src="js/library/bootstrap.min.js"></script>
+<script src="js/library/jquery.validate.min.js"></script>
+<script src="js/library/additional-methods.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/mysong.js"></script>
+</body>
+</html>

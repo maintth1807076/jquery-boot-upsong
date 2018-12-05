@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+    <title>Title</title>
+    <style>
+        nav {
+            background: none;
+        }
+        body {
+            background-image: url("img/1.jpg");
+            background-size: 100%;
+        }
+        .jumbotron {
+            color: white;
+            background-image: url("img/1.jpg");
+            background-size: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-none">
+        <a class="navbar-brand pl-5" href="#">
+            <i class="fa fa-camera-retro fa-2x pl-5"></i>
+        </a>
+        <span class="navbar-text pr-5">MP3 Song</span>
+        <form class="form-inline pl-5">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse pl-5" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto pl-5">
+                <li class="nav-item active pl-5">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item pl-3">
+                    <a class="nav-link" href="#list-song">List Song</a>
+                </li>
+                <li class="nav-item pl-3">
+                    <a class="nav-link" href="#">Latest Song</a>
+                </li>
+                <li class="nav-item pl-3">
+                    <a class="nav-link" href="#">My Song</a>
+                </li>
+                <li class="nav-item pl-3">
+                    <a id="btn-creatsong" class="nav-link" href="#">Creat Song</a>
+                </li>
+                <li class="nav-item dropdown pl-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a id="btn-register" class="dropdown-item" href="#">Register</a>
+                        <div class="dropdown-divider"></div>
+                        <a id="btn-login" class="dropdown-item" href="#">Login</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron container-fluid">
+        <h1 class="display-4">Music Fashion Style</h1>
+        <p class="lead">Live your truth. Express your love. Share your enthusiasm. Take action towards your dreams. Walk your talk. Dance and sing to your music. Embrace your blessings. Make today worth remembering.</p>
+        <hr class="my-4">
+        <p>Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything.</p>
+        <p>Music is the strongest form of magic.</p>
+        <p>Music is the wine that fills the cup of silence.</p>
+        <p>Music in the soul can be heard by the universe.</p>
+        <p>Music is an agreeable harmony for the honor of God and the permissible delights of the soul.</p>
+        <p>Music with dinner is an insult both to the cook and the violinist.</p>
+        <p>Music sounds different to the one who plays it. It is the musician’s curse.</p>
+        <p>Music brings a warm glow to my vision, thawing mind and muscle from their endless wintering.</p>
+        <p><a id="btn-start" class="btn btn-dark btn-lg" href="#" role="button">Start to listen</a></p>
+    </div>
+    <!-- Modal Login-->
+    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" name="login-form" id="login-form">
+                        <div class="form-group row">
+                            <label class="col-form-label ">Email</label>
+                            <input class="form-control " type="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label ">Password</label>
+                            <input class="form-control " type="password" name="password" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <input class="btn btn-primary" type="reset" name="btn-reset" value="Reset">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--List Song-->
+    <div class="container">
+        <div class="song-player pt-2 row d-none">
+            <div class="song-detail col-sm-12 col-md-8">
+                <marquee behavior="scroll" direction="left">
+                    <div class="current-song-title">
+                        <span id="current-play-title"></span>
+                    </div>
+                </marquee>
+            </div>
+            <div class="player col-sm-12 col-md-2">
+                <audio controls id="my-mp3" autoplay>
+                    <source src="" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    </div>
+    <div class="list-song container d-none" id="list-song"></div>
+    <!--Modal Register-->
+    <div class="modal" id="modal-register" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Register Song</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" name="register-form" id="register-form">
+                        <div class="form-group row">
+                            <input class="form-control" type="text" name="firstName" placeholder="First Name">
+                        </div>
+                        <div class="form-group row">
+                            <input class="form-control" type="text" name="lastName" placeholder="Last Name">
+                        </div>
+                        <div class="form-group row">
+                            <input class="form-control" type="password" name="password" placeholder="Password">
+                        </div>
+                        <div class="form-group row">
+                            <input class="form-control" type="password" name="confirm-password" placeholder="Confirm Password">
+                        </div>
+                        <div class="form-group row">
+                            <input class="form-control" name="address" placeholder="Address">
+                        </div>
+                        <div class="form-group row">
+                            <input class="form-control" type="text" name="phone" placeholder="Phone">
+                        </div>
+                        <div class="form-group row">
+                            <input class="form-control" type="text" name="avatar" placeholder="Avatar">
+                        </div>
+                        <div class="form-group row">
+                            <select class="form-control" name="gender">
+                                <option value="1">Male</option>
+                                <option value="0">Female</option>
+                                <option value="2">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <input class="form-control" type="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="form-group row">
+                            <input class="form-control" type="date" name="birthday">
+                        </div>
+                        <div class="form-group">
+                            <label class="">&nbsp;</label>
+                            <input class="btn btn-primary" type="submit" name="btn-submit" value="Submit">
+                            <input class="btn btn-primary" type="reset" name="btn-reset" value="Reset">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal Creat Song-->
+    <div class="modal" id="modal-creatsong" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Creat Song</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" name="song-form" id="song-form">
+                        <div class="form-group row">
+                            <label class="col-form-label col-3">Name</label>
+                            <input class="form-control col-6" type="text" name="name">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-3">Singer Name</label>
+                            <input class="form-control col-6" type="text" name="singer">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-3">Description</label>
+                            <input class="form-control col-6" type="text" name="description">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-3">Author</label>
+                            <input class="form-control col-6" type="text" name="author">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-3">Thumbnail</label>
+                            <input class="form-control col-6" type="text" name="thumbnail">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-3">Link</label>
+                            <input class="form-control col-6" type="text" name="link">
+                        </div>
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <input class="btn btn-primary" type="submit" name="btn-submit" value="Submit">
+                            <input class="btn btn-primary" type="reset" name="btn-reset" value="Reset">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/library/jquery-3.3.1.min.js"></script>
+    <script src="js/library/bootstrap.min.js"></script>
+    <script src="js/library/jquery.validate.min.js"></script>
+    <script src="js/library/additional-methods.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/creatsong.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/listsong.js"></script>
+    <script>
+        $('#btn-start').click(function () {
+            $('.navbar').removeClass('d-none');
+            $('.song-player').removeClass('d-none');
+            $('.list-song').removeClass('d-none');
+            $('.jumbotron').addClass('d-none');
+        });
+    </script>
+</body>
+</html>
