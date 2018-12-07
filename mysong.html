@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/mystyle.css">
     <title>My Song</title>
+    <style>
+        nav {
+            background: none;
+        }
+        body {
+            background-image: url("img/1.jpg");
+            background-size: 100%;
+            background-attachment: fixed;
+        }
+        .jumbotron {
+            color: white;
+            background-image: url("img/1.jpg");
+            background-size: 100%;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -20,7 +36,6 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse pl-5" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto pl-5">
             <li class="nav-item active pl-5">
@@ -30,13 +45,13 @@
                 <a class="nav-link" href="listsong.html">List Song</a>
             </li>
             <li class="nav-item pl-3">
-                <a class="nav-link" href="mysong.html">My Song</a>
+                <a class="nav-link" href="#">Latest Song</a>
             </li>
             <li class="nav-item pl-3">
-                <a class="nav-link" href="creatsong.html">Creat Song</a>
+                <a id="btn-mysong" class="nav-link" href="#">My Song</a>
             </li>
             <li class="nav-item pl-3">
-                <a class="nav-link disabled" href="#">About</a>
+                <a id="btn-creatsong" class="nav-link" href="#">Creat Song</a>
             </li>
             <li class="nav-item dropdown pl-3">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
@@ -49,27 +64,163 @@
         </ul>
     </div>
 </nav>
-<div class="song-player">
-    <div class="song-detail">
-        <marquee behavior="scroll" direction="left">
-            <div class="current-song-title">
-                <span id="current-play-title"></span>
+<!-- Modal Login-->
+<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-        </marquee>
-    </div>
-    <div class="player">
-        <audio controls id="my-mp3" autoplay>
-            <source src="" type="audio/mpeg">
-        </audio>
+            <div class="modal-body">
+                <form action="" name="login-form" id="login-form">
+                    <div class="form-group row">
+                        <label class="col-form-label ">Email</label>
+                        <input class="form-control " type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-form-label ">Password</label>
+                        <input class="form-control " type="password" name="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <input class="btn btn-primary" type="reset" name="btn-reset" value="Reset">
+                </form>
+            </div>
+        </div>
     </div>
 </div>
-<div class="list-song" id="list-song">
+<!--List Song-->
+<div class="container">
+    <div class="song-player pt-2 row">
+        <div class="song-detail col-sm-12 col-md-8">
+            <marquee behavior="scroll" direction="left">
+                <div class="current-song-title">
+                    <span id="current-play-title"></span>
+                </div>
+            </marquee>
+        </div>
+        <div class="player col-sm-12 col-md-2">
+            <audio controls id="my-mp3" autoplay>
+                <source src="" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+</div>
+<div class="list-song container" id="list-song"></div>
+<!--Modal Register-->
+<div class="modal" id="modal-register" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Register Song</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" name="register-form" id="register-form">
+                    <div class="form-group row">
+                        <input class="form-control" type="text" name="firstName" placeholder="First Name">
+                    </div>
+                    <div class="form-group row">
+                        <input class="form-control" type="text" name="lastName" placeholder="Last Name">
+                    </div>
+                    <div class="form-group row">
+                        <input class="form-control" type="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="form-group row">
+                        <input class="form-control" type="password" name="confirm-password" placeholder="Confirm Password">
+                    </div>
+                    <div class="form-group row">
+                        <input class="form-control" name="address" placeholder="Address">
+                    </div>
+                    <div class="form-group row">
+                        <input class="form-control" type="text" name="phone" placeholder="Phone">
+                    </div>
+                    <div class="form-group row">
+                        <input class="form-control" type="text" name="avatar" placeholder="Avatar">
+                    </div>
+                    <div class="form-group row">
+                        <select class="form-control" name="gender">
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                            <option value="2">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <input class="form-control" type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group row">
+                        <input class="form-control" type="date" name="birthday">
+                    </div>
+                    <div class="form-group">
+                        <label class="">&nbsp;</label>
+                        <input class="btn btn-primary" type="submit" name="btn-submit" value="Submit">
+                        <input class="btn btn-primary" type="reset" name="btn-reset" value="Reset">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal Creat Song-->
+<div class="modal" id="modal-creatsong" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Creat Song</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="sumary" class="error"></div>
+                <form action="" name="song-form" id="song-form">
+                    <div class="form-group row">
+                        <label class="col-form-label">Name</label>
+                        <input class="form-control" type="text" name="name">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-form-label col-3">Singer Name</label>
+                        <input class="form-control col-6" type="text" name="singer">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-form-label col-3">Description</label>
+                        <input class="form-control col-6" type="text" name="description">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-form-label col-3">Author</label>
+                        <input class="form-control col-6" type="text" name="author">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-form-label col-3">Thumbnail</label>
+                        <input class="form-control col-6" type="text" name="thumbnail">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-form-label col-3">Link</label>
+                        <input class="form-control col-6" type="text" name="link">
+                    </div>
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <input class="btn btn-primary" type="submit" name="btn-submit" value="Submit">
+                        <input class="btn btn-primary" type="reset" name="btn-reset" value="Reset">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="js/library/jquery-3.3.1.min.js"></script>
 <script src="js/library/bootstrap.min.js"></script>
 <script src="js/library/jquery.validate.min.js"></script>
 <script src="js/library/additional-methods.min.js"></script>
 <script src="js/config.js"></script>
+<script src="js/login.js"></script>
+<script src="js/register.js"></script>
+<script src="js/creatsong.js"></script>
+<script src="js/register.js"></script>
 <script src="js/mysong.js"></script>
 </body>
 </html>

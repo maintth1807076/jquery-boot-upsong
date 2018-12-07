@@ -1,3 +1,6 @@
+$('#btn-login').click(function () {
+    $('#modal-login').modal('show');
+});
 var validater = $('#login-form').validate({
     rules: {
         'email': {
@@ -35,7 +38,9 @@ var validater = $('#login-form').validate({
             success: function (data, textStatus, jqXHR) {
                 console.log('success');
                 localStorage.setItem('token', data.token);
-                window.location.href = "listsong.html";
+                alert('Đăng nhập thành công');
+                $('#modal-login').modal('hide');
+
             },
             error: function (jqXHR, textStatus, error) {
                 console.log('error');

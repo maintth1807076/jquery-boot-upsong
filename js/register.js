@@ -1,3 +1,6 @@
+$('#btn-register').click(function () {
+    $('#modal-register').modal('show');
+});
 var validater = $('#register-form').validate({
     rules: {
         'firstName': {
@@ -44,7 +47,7 @@ var validater = $('#register-form').validate({
             maxlength: 'Password quá dài, vui lòng nhập nhiều nhất {0} ký tự',
         },
         'confirm-password': {
-            equalTo: 'Password và confirm không giống nhao.'
+            equalTo: 'Password và confirm không giống nhau.'
         }
     },
     submitHandler: function (form,event) {

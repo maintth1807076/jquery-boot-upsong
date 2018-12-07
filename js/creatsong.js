@@ -1,3 +1,6 @@
+$('#btn-creatsong').click(function () {
+    $('#modal-creatsong').modal('show');
+});
 var validater = $('#song-form').validate({
     submitHandler: function (form,event) {
         event.preventDefault();
@@ -16,6 +19,7 @@ var validater = $('#song-form').validate({
             data: JSON.stringify(senderObject),
             headers: { 'authorization': 'Basic ' + localStorage.getItem('token')},
             success: function (data, textStatus, jqXHR) {
+                alert('Tải lên thành công');
                 console.log('success');
             },
             error: function (jqXHR, textStatus, error) {

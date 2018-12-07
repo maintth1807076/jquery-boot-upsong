@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/mystyle.css">
-    <title>Title</title>
     <style>
         nav {
             background: none;
@@ -22,6 +20,8 @@
             background-size: 100%;
         }
     </style>
+    <link rel="stylesheet" href="css/mystyle.css">
+    <title>Home</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-none">
@@ -43,13 +43,13 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item pl-3">
-                    <a class="nav-link" href="#list-song">List Song</a>
+                    <a class="nav-link" href="listsong.html">List Song</a>
                 </li>
                 <li class="nav-item pl-3">
                     <a class="nav-link" href="#">Latest Song</a>
                 </li>
                 <li class="nav-item pl-3">
-                    <a class="nav-link" href="#">My Song</a>
+                    <a id="btn-mysong" class="nav-link" href="mysong.html">My Song</a>
                 </li>
                 <li class="nav-item pl-3">
                     <a id="btn-creatsong" class="nav-link" href="#">Creat Song</a>
@@ -124,6 +124,7 @@
         </div>
     </div>
     <div class="list-song container d-none" id="list-song"></div>
+    <div class="my-song container d-none" id="my-song"></div>
     <!--Modal Register-->
     <div class="modal" id="modal-register" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -191,30 +192,31 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <div id="sumary" class="error"></div>
                     <form action="" name="song-form" id="song-form">
                         <div class="form-group row">
-                            <label class="col-form-label col-3">Name</label>
-                            <input class="form-control col-6" type="text" name="name">
+                            <label class="col-form-label">Name</label>
+                            <input class="form-control" type="text" name="name">
                         </div>
                         <div class="form-group row">
-                            <label class="col-form-label col-3">Singer Name</label>
-                            <input class="form-control col-6" type="text" name="singer">
+                            <label class="col-form-label">Singer Name</label>
+                            <input class="form-control" type="text" name="singer">
                         </div>
                         <div class="form-group row">
-                            <label class="col-form-label col-3">Description</label>
-                            <input class="form-control col-6" type="text" name="description">
+                            <label class="col-form-label">Description</label>
+                            <input class="form-control" type="text" name="description">
                         </div>
                         <div class="form-group row">
-                            <label class="col-form-label col-3">Author</label>
-                            <input class="form-control col-6" type="text" name="author">
+                            <label class="col-form-label">Author</label>
+                            <input class="form-control" type="text" name="author">
                         </div>
                         <div class="form-group row">
-                            <label class="col-form-label col-3">Thumbnail</label>
-                            <input class="form-control col-6" type="text" name="thumbnail">
+                            <label class="col-form-label">Thumbnail</label>
+                            <input class="form-control" type="text" name="thumbnail">
                         </div>
                         <div class="form-group row">
-                            <label class="col-form-label col-3">Link</label>
-                            <input class="form-control col-6" type="text" name="link">
+                            <label class="col-form-label">Link</label>
+                            <input class="form-control" type="text" name="link">
                         </div>
                         <div class="form-group">
                             <label>&nbsp;</label>
@@ -234,7 +236,6 @@
     <script src="js/login.js"></script>
     <script src="js/register.js"></script>
     <script src="js/creatsong.js"></script>
-    <script src="js/register.js"></script>
     <script src="js/listsong.js"></script>
     <script>
         $('#btn-start').click(function () {
@@ -244,5 +245,6 @@
             $('.jumbotron').addClass('d-none');
         });
     </script>
+    <script src="js/mysong.js"></script>
 </body>
 </html>

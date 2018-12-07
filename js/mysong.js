@@ -1,6 +1,6 @@
 $.ajax({
     type: "GET",
-    url: LIST_SONG_API,
+    url: MY_SONG_API,
     data: 'json',
     headers: { 'authorization': 'Basic ' + localStorage.getItem('token')},
     success: function (listSong, textStatus, jqXHR) {
